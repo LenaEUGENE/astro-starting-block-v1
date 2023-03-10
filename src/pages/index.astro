@@ -1,81 +1,52 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import { Icon } from 'astro-icon'
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+	<main class="">
+		<section
+		aria-labelledby="hero-title"
+		class="mx-auto bg-transparent px-6 sm:px-8 md:px-12 lg:px-16 2xl:px-24 pt-0 pb-14 md:py-14 lg:py-24"
+	>
+		<div class="container mx-auto">
+			<div
+				class="Hero--wrapper grid gap-6 md:grid-cols-2"
+			>
+				<article class="title">
+					<p class="text-orange-800">Your space travel  agency</p>
+					<h1 class="grid text-5xl md:text:6xl lg:text:7xl 2xl:text-8xl tracking-wide mt-2 mb-4 md:mb-8 lg:mb-10 2xl:mb-12 text-orange-400 font-bold">To infinity and beyond</h1>
+				</article>
+				<div class="CTA space-y-5 lg:space-x-8">
+					<button class="border-2 p-3 lg:mt-14" role="button">
+						<a href="tel:+339213487" title="" class="inline-flex items-center text-xs md:text-sm uppercase">
+							ready to go!
+							<Icon name="ph:rocket-duotone" class="ml-2 w-6 group-hover:text-white " />
+						</a>
+					</button>
+					<button class="border-2 group">
+						<a href="/#coachingsPrev" title="" class="p-3 inline-flex items-center" >
+							Need more info
+							<Icon name="ph:arrow-circle-right-duotone" class="ml-2 w-6 text-accent group-hover:text-white text-xs md:text-sm uppercase" />
+						</a>
+					</button>
+				</div>
+
+				<div class="relative img-wrapper overflow-hidden rounded-xl md:col-start-2 md:row-start-1 md:row-span-3">
+					<img 
+						src="https://images.unsplash.com/photo-1615627121117-e3278bc8b1db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2667&q=80"
+						alt="Outside the spaceship after landing"
+						class="hero-image h-full w-full object-cover"
+					/>
+				</div>
+			 
+				<p class="text-xl font-medium md:col-start-1 md:col-span-1 md:row-start-2 ">
+					Poke woke pinterest, cliche pork belly yuccie etsy vice DIY vibecession church-key. Kogi gorpcore meggings, schlitz cliche af glossier. 
+				</p>
+			</div>
+			
+		</div>
+	</section>
+		
 	</main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
