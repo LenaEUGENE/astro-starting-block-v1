@@ -1,11 +1,12 @@
 ---
-type: Let's get physical
-catégorie: Adventure
-Departure: fortnight
-tarif: 4795€
-description: Experience action over fiction
-populaire: false
-Level: Hero best buddy
-img: src/images/packages/moon.jpg
+title: a fabulous time on the moon
+type: let's have fun
+category: leisure
+duration: 7 days
+price: 4795€
+description: be an observer of earth from the satellite
+popular: false
+level: the hero best buddy
+img: src/images/packages/the_moon.png
 img_alt: Week-end on the moon
 ---

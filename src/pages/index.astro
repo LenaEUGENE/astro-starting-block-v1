@@ -11,6 +11,15 @@ import Button from '@components/Button.astro';
 
 import life_on_mars from "@images/life_on_mars.jpg";
 
+//import collections
+import { getCollection } from 'astro:content';
+
+// Fetching collection packages
+const packages = await getCollection("packages");
+
+
+
+
 ---
 
 <BaseLayout title="Welcome to Astro.">
@@ -76,6 +85,67 @@ import life_on_mars from "@images/life_on_mars.jpg";
 					<p class="text-orange-800">One week on Mars, One year on Titan?</p>
 					<h2 class="grid text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl tracking-wide mt-2 mb-4 2xl:mb-12 text-orange-500 font-bold">Choose your own adventure</h2>
 				</article>
+				<ul
+          class="mx-auto place-items-center grid gap-8 py-14 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
+        >
+				{
+					packages.map( (packages) => 
+					
+					<li>
+					<article class="packageCard border border-orange-500 bg-white flex-shrink-0 max-w-[95vw] overflow-hidden rounded-lg shadow-md">
+						<Image
+							src={packages.data.img}
+							alt={packages.data.img_alt}
+							format="webp"
+							width="640"
+							aspectRatio="3:2"
+							class="w-full h-full object-cover object-center"
+						/>
+						<div class="contentWrapper w-full max-w-sm p-6 flex flex-col justify-between items-start">
+							<div class="content">
+								<div class="details">
+									{packages.data.popular && (
+										<span class="bg-brand absolute top-0 right-0 -translate-y-1/2 rounded-full px-3 py-1 text-sm font-medium text-white shadow-md">
+											popular
+										</span>
+									)}
+									<h4 class="capitalize text-xl font-semibold tracking-tight">{packages.data.title}</h4>
+									<p class="text-lg">type: <span class="font-medium italic">{packages.data.type}</span></p>
+									<p class="text-lg">duration: {packages.data.duration}</p>
+									<p class="text-lg">category: {packages.data.category}</p>
+									<p class="text-lg">price: <span class="font-medium text-pink-400">{packages.data.price}</span></p>
+									<p class="text-lg">{packages.data.description}</p>
+									<p class="text-lg">level: <span class="font-medium text-orange-400">{packages.data.level}</span></p>
+								</div>
+								<div class="CTA inline-flex space-x-4 mt-6">
+									<Button
+										href="#"
+										text="ready to go!"
+										icon={{
+											side:"right",
+											name:"ph:arrow-circle-right-duotone",
+										}}
+										classes={"primary-md"}
+									/>
+									<Link
+										href="#"
+										text="more info"
+										icon={{
+											side:"right",
+											name:"ph:rocket-duotone",
+										}}
+										classes={"ghost link-md"}
+									/>
+								</div>
+							</div>
+						</div>
+					</article>
+				</li>
+
+					)
+				}
+
+        </ul>
 			</div>
 		</section>
 		
