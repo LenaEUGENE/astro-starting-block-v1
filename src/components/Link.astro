@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props { 
+  text: string;
+  href: string;
+  icon?: {
+    name: string;
+    side: "left" | "right";
+  };
+  classes?: string;
+
+}
+const { text, href, icon, classes, ...rest } = Astro.props as Props;
+---
+<a
+    href={href}
+    class:list={[
+      "link",
+      classes,
+    ]}
+    { ...rest}
+  >
+    {icon && icon.side === "left" && (
+
+      <Icon name={icon.name} class="icon" />
+
+      )
+    } 
+
+    {text}
+
+    {icon && icon.side === "right" && (
+
+      <Icon name={icon.name} class="icon ml-2 w-6 group-hover:text-white text-xs md:text-sm uppercase" />
+
+      )
+    } 
+</a>
+
+
+  <style>
+
+  .link {
+    @apply hover:font-medium hover:border-orange-500 hover:border-b-2 text-orange-500 transition-all duration-300;
+  }
+
+ .ghost.link {
+    @apply inline-flex items-center px-4 py-2 md:px-6 md:py-3 rounded-lg shadow-md border-2 transition-all duration-300 uppercase font-medium text-sm tracking-wide focus:ring focus:ring-offset-2 focus:outline-none border-orange-500 bg-transparent hover:bg-orange-500 hover:text-white text-orange-500 focus:ring-orange-600;
+  
+  }
+  </style>

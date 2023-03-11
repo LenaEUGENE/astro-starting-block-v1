@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Icon } from 'astro-icon';
-import { Image} from "@astrojs/image/components";
 
 // import components
+import { Image} from "@astrojs/image/components";
+import Link from '@components/Link.astro';
+import Button from '@components/Button.astro';
 
 //import medias
 
@@ -18,7 +20,7 @@ import life_on_mars from "@images/life_on_mars.jpg";
 		class="min-h-[90vh] mx-auto bg-transparent px-6 sm:px-8 md:px-12 lg:px-16 2xl:px-24 pt-0 pb-14 md:py-14 lg:py-24"
 	>
 		<div class="container mx-auto">
-			<div
+			<div 
 				class="Hero--wrapper h-full grid gap-6 md:grid-cols-2"
 			>
 				<article class="title">
@@ -39,18 +41,24 @@ import life_on_mars from "@images/life_on_mars.jpg";
 					Poke woke pinterest, cliche pork belly yuccie etsy vice DIY vibecession church-key. Kogi gorpcore meggings, schlitz cliche af glossier. 
 				</p>
 				<div class="CTA space-y-5 lg:space-x-8">
-					<button class="border-2 p-3 lg:mt-14" role="button">
-						<a href="tel:+339213487" title="" class="inline-flex items-center text-xs md:text-sm uppercase">
-							ready to go!
-							<Icon name="ph:rocket-duotone" class="ml-2 w-6 group-hover:text-white " />
-						</a>
-					</button>
-					<button class="border-2 group">
-						<a href="/#coachingsPrev" title="" class="p-3 inline-flex items-center" >
-							Need more info
-							<Icon name="ph:arrow-circle-right-duotone" class="ml-2 w-6 text-accent group-hover:text-white text-xs md:text-sm uppercase" />
-						</a>
-					</button>
+					<Button
+						href="#"
+						text="ready to go!"
+						icon={{
+							side:"right",
+							name:"ph:arrow-circle-right-duotone",
+						}}
+						classes={"primary"}
+					/>
+					<Link
+						href="#"
+						text="I need more info"
+						icon={{
+							side:"right",
+							name:"ph:rocket-duotone",
+						}}
+						classes={"ghost"}
+					/>
 				</div>
 			</div>
 			
