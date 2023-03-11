@@ -15,55 +15,69 @@ import life_on_mars from "@images/life_on_mars.jpg";
 
 <BaseLayout title="Welcome to Astro.">
 	<main class="">
+		<!-- hero section -->
 		<section
-		aria-labelledby="hero-title"
-		class="min-h-[90vh] mx-auto bg-transparent px-6 sm:px-8 md:px-12 lg:px-16 2xl:px-24 pt-0 pb-14 md:py-14 lg:py-24"
-	>
-		<div class="container mx-auto">
-			<div 
-				class="Hero--wrapper h-full grid gap-6 md:grid-cols-2"
-			>
-				<article class="title">
-					<p class="text-orange-800">Your space travel  agency</p>
-					<h1 class="grid text-5xl md:text:6xl lg:text:7xl 2xl:text-8xl tracking-wide mt-2 mb-4 2xl:mb-12 text-orange-500 font-bold">To infinity and beyond</h1>
-				</article>
+			aria-labelledby="hero-title"
+			class="min-h-[90vh] mx-auto bg-transparent px-6 sm:px-8 md:px-12 lg:px-16 2xl:px-24 pt-0 pb-14 md:py-14 lg:py-24"
+		>
+			<div class="container mx-auto">
+				<div 
+					class="Hero--wrapper h-full grid gap-6 md:grid-cols-2"
+				>
+					<article class="title">
+						<p class="text-orange-800">Your space travel  agency</p>
+						<h1 class="grid text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl tracking-wide mt-2 mb-4 2xl:mb-12 text-orange-500 font-bold">To infinity and beyond</h1>
+					</article>
 
-				<div class="relative img-wrapper overflow-hidden rounded-xl md:col-start-2 md:row-start-1 md:row-span-3">
-					<Image
-						src={life_on_mars}
-						alt="Outside the spaceship after landing"
-						class="hero-image h-full w-full object-cover aspect-[3/2]"
-						format= "webp"
-					/>
+					<div class="relative img-wrapper overflow-hidden rounded-xl md:col-start-2 md:row-start-1 md:row-span-3">
+						<Image
+							src={life_on_mars}
+							alt="Outside the spaceship after landing"
+							class="hero-image h-full w-full object-cover aspect-[3/2]"
+							format= "webp"
+						/>
+					</div>
+				
+					<p class="text-lg md:text-xl font-medium md:col-start-1 md:col-span-1 md:row-start-2 ">
+						Poke woke pinterest, cliche pork belly yuccie etsy vice DIY vibecession church-key. Kogi gorpcore meggings, schlitz cliche af glossier. 
+					</p>
+					<div class="CTA space-y-5 lg:space-x-8">
+						<Button
+							href="#"
+							text="ready to go!"
+							icon={{
+								side:"right",
+								name:"ph:arrow-circle-right-duotone",
+							}}
+							classes={"primary"}
+						/>
+						<Link
+							href="#"
+							text="I need more info"
+							icon={{
+								side:"right",
+								name:"ph:rocket-duotone",
+							}}
+							classes={"ghost"}
+						/>
+					</div>
 				</div>
-			 
-				<p class="text-lg md:text-xl font-medium md:col-start-1 md:col-span-1 md:row-start-2 ">
-					Poke woke pinterest, cliche pork belly yuccie etsy vice DIY vibecession church-key. Kogi gorpcore meggings, schlitz cliche af glossier. 
-				</p>
-				<div class="CTA space-y-5 lg:space-x-8">
-					<Button
-						href="#"
-						text="ready to go!"
-						icon={{
-							side:"right",
-							name:"ph:arrow-circle-right-duotone",
-						}}
-						classes={"primary"}
-					/>
-					<Link
-						href="#"
-						text="I need more info"
-						icon={{
-							side:"right",
-							name:"ph:rocket-duotone",
-						}}
-						classes={"ghost"}
-					/>
-				</div>
+				
 			</div>
-			
-		</div>
-	</section>
+		</section>
+
+		<!-- packages gallery -->
+		<section
+			aria-labelledby="hero-title"
+			class="min-h-[90vh] mx-auto bg-transparent px-6 sm:px-8 md:px-12 lg:px-16 2xl:px-24 pt-0 pb-14 md:py-14 lg:py-24"
+		>
+			<div class="container">
+				<article class="title">
+					<p class="text-orange-800">One week on Mars, One year on Titan?</p>
+					<h2 class="grid text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl tracking-wide mt-2 mb-4 2xl:mb-12 text-orange-500 font-bold">Choose your own adventure</h2>
+				</article>
+			</div>
+		</section>
 		
 	</main>
 </BaseLayout>
