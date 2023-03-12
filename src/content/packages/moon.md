@@ -1,12 +1,12 @@
 ---
-title: a fabulous time on the moon
-type: let's have fun
+title: A fabulous time on the moon
+type: Let's have fun
 category: leisure
 duration: 7 days
 price: 4795€
-description: be an observer of earth from the satellite
+description: Be an observer of earth from the satellite
 popular: false
-level: the hero best buddy
+character: The hero best buddy
 img: ./assets/packages/the_moon.png
 img_alt: Week-end on the moon
 ---

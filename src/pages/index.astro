@@ -80,112 +80,45 @@ const packages = await getCollection("packages");
 			aria-labelledby="hero-title"
 			class="mx-auto bg-transparent px-6 sm:px-8 md:px-12 lg:px-16 2xl:px-24 pt-0 pb-14 md:py-14 lg:py-24"
 		>
-			<div class="container">
+			<div class="container mx-auto">
 				<article class="title">
 					<p class="text-orange-800">One week on Mars, One year on Titan?</p>
 					<h2 class="grid text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl tracking-wide mt-2 mb-4 2xl:mb-12 text-orange-500 font-bold">Choose your own adventure</h2>
 				</article>
 				<ul
-          class="mx-auto place-items-center grid gap-8 py-14 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
+          class="mx-auto grid sm:grid-cols-2 gap-6 md:gap-8 lg:grid-cols-3 2xl:grid-cols-4 py-10 lg:py-14 "
         >
 				{
 					packages.map( (packages) => 
 					
 					<li>
-					<article class="relative packageCard border border-orange-500 bg-white flex-shrink-0 max-w-[95vw] rounded-lg shadow-md">
-						<Image
+					<article class="relative flex flex-col packageCard border border-orange-500 max-w-96 h-[35rem] bg-white flex-shrink-0 rounded-lg shadow-md">
+						<div class="imageWrapper relative max-h-72 flex-1">
+							<img
 							src={packages.data.img}
 							alt={packages.data.img_alt}
-							format="webp"
-							width="640"
-							aspectRatio="3:2"
-							class="w-full h-full object-cover object-center"
-						/>
-						<div class="contentWrapper w-full max-w-sm p-6 flex flex-col justify-between items-start">
-							<div class="content">
-								{packages.data.popular && (
-										<span class="absolute right-0 top-0 -translate-y-1/2 rounded-lg px-3 py-1 text-sm font-medium text-white shadow-md bg-orange-400">
-											popular
-										</span>
-									)}
-								<div class="info">
-									<h4 class="capitalize text-xl font-semibold tracking-tight">{packages.data.title}</h4>
-									<p class="text-lg">type: <span class="font-medium italic">{packages.data.type}</span></p>
-									<p class="text-lg">duration: {packages.data.duration}</p>
-									<p class="text-lg">category: {packages.data.category}</p>
-									<p class="text-lg">price: <span class="font-medium text-pink-400">{packages.data.price}</span></p>
-									<p class="text-lg">{packages.data.description}</p>
-									<p class="text-lg">level: <span class="font-medium text-orange-400">{packages.data.level}</span></p>
-								</div>
-								<div class="CTA inline-flex space-x-4 mt-6">
-									<Button
-										href="#"
-										text="ready to go!"
-										icon={{
-											side:"right",
-											name:"ph:arrow-circle-right-duotone",
-										}}
-										classes={"primary-md"}
-									/>
-									<Link
-										href="#"
-										text="more info"
-										icon={{
-											side:"right",
-											name:"ph:rocket-duotone",
-										}}
-										classes={"ghost link-md"}
-									/>
-								</div>
+							class="w-full h-full object-cover object-center aspect-[3/2] rounded-t-lg"
+							/>
+							<div class="absolute inset-0 h-full overlay bg-black/20"></div>
+							<div class="descriptionWrapper absolute bottom-0 p-6">
+								<p class="text-lg font-medium text-white">Starting at <span class="text-xl font-bold ">{packages.data.price}</span></p>
+								<p class="text-lg text-white font-medium">{packages.data.description}</p>		
 							</div>
 						</div>
-					</article>
-				</li>
-
-					)
-				}
-
-        </ul>
-			</div>
-		</section>
-		<!-- packages gallery -->
-		<section
-			aria-labelledby="hero-title"
-			class="mx-auto bg-transparent px-6 sm:px-8 md:px-12 lg:px-16 2xl:px-24 pt-0 pb-14 md:py-14 lg:py-24"
-		>
-			<div class="container">
-				<article class="title">
-					<p class="text-orange-800">One week on Mars, One year on Titan?</p>
-					<h2 class="grid text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl tracking-wide mt-2 mb-4 2xl:mb-12 text-orange-500 font-bold">Choose your own adventure</h2>
-				</article>
-				<ul
-          class="mx-auto place-items-center grid gap-8 py-14 md:grid-cols-2 lg:grid-cols-3 lg:gap-10"
-        >
-				{
-					packages.map( (packages) => 
-					
-					<li>
-					<article class="relative packageCard border border-orange-500 bg-white flex-shrink-0 max-w-[95vw] overflow-hidden rounded-lg shadow-md">
-						<img
-							src={packages.data.img}
-							alt={packages.data.img_alt}
-							class="w-full h-full object-cover object-center aspect-[3/2]"
-						/>
-						<div class="contentWrapper w-full max-w-sm p-6 flex flex-col justify-between items-start">
+						<div class="contentWrapper w-full max-w-sm p-6 justify-between items-start">
 							<div class="content">
 								<div class="details">
 									{packages.data.popular && (
-										<span class="bg-brand absolute top-0 right-0 -translate-y-1/2 rounded-full px-3 py-1 text-sm font-medium text-white shadow-md">
+										<span class="bg-orange-400 absolute top-0 right-0 -translate-y-1/2 rounded-full px-3 py-1 text-sm font-medium text-white shadow-md">
 											popular
 										</span>
 									)}
+									
 									<h4 class="capitalize text-xl font-semibold tracking-tight">{packages.data.title}</h4>
 									<p class="text-lg">type: <span class="font-medium italic">{packages.data.type}</span></p>
 									<p class="text-lg">duration: {packages.data.duration}</p>
 									<p class="text-lg">category: {packages.data.category}</p>
-									<p class="text-lg">price: <span class="font-medium text-pink-400">{packages.data.price}</span></p>
-									<p class="text-lg">{packages.data.description}</p>
-									<p class="text-lg">level: <span class="font-medium text-orange-400">{packages.data.level}</span></p>
+									<p class="text-lg">character: <span class="font-medium text-orange-400">{packages.data.character}</span></p>
 								</div>
 								<div class="CTA inline-flex space-x-4 mt-6">
 									<Button
