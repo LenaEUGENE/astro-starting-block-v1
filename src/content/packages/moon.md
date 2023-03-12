@@ -7,6 +7,6 @@ price: 4795€
 description: be an observer of earth from the satellite
 popular: false
 level: the hero best buddy
-img: src/images/packages/the_moon.png
+img: ./assets/packages/the_moon.png
 img_alt: Week-end on the moon
 ---

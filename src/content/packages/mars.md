@@ -7,6 +7,6 @@ price: 11850€
 description: science over science-fiction
 popular: true
 level: the scientist
-img: src/images/packages/life_on_mars.jpg
+img: ./assets/packages/life_on_mars.jpg
 img_alt: the martian
 ---
