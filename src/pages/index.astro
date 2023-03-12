@@ -22,11 +22,11 @@ const packages = await getCollection("packages");
 
 ---
 
-<BaseLayout title="Welcome to Astro.">
-	<main class="">
+<BaseLayout title="To infinity and beyond">
+	<main role="main" class="">
 		<!-- hero section -->
 		<section
-			aria-labelledby="hero-title"
+			aria-labelledby="herosection-title"
 			class="mx-auto bg-transparent px-6 sm:px-8 md:px-12 lg:px-16 2xl:px-24 pt-0 pb-14 md:py-14 lg:py-24"
 		>
 			<div class="container mx-auto">
@@ -35,7 +35,7 @@ const packages = await getCollection("packages");
 				>
 					<article class="title">
 						<p class="text-orange-800">Your space travel  agency</p>
-						<h1 class="grid text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl tracking-wide mt-2 mb-4 2xl:mb-12 text-orange-500 font-bold">To infinity and beyond</h1>
+						<h1 id="herosection-title" class="grid text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl tracking-wide mt-2 mb-4 2xl:mb-12 text-orange-500 font-bold">To infinity and beyond</h1>
 					</article>
 
 					<div class="relative img-wrapper overflow-hidden rounded-xl md:col-start-2 md:row-start-1 md:row-span-3">
@@ -77,22 +77,22 @@ const packages = await getCollection("packages");
 
 		<!-- packages gallery -->
 		<section
-			aria-labelledby="hero-title"
+			aria-labelledby="packages-section-preview-title"
 			class="mx-auto bg-transparent px-6 sm:px-8 md:px-12 lg:px-16 2xl:px-24 pt-0 pb-14 md:py-14 lg:py-24"
 		>
-			<div class="container mx-auto">
+			<div class="container mx-auto space-y-24">
 				<article class="title">
 					<p class="text-orange-800">One week on Mars, One year on Titan?</p>
-					<h2 class="grid text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl tracking-wide mt-2 mb-4 2xl:mb-12 text-orange-500 font-bold">Choose your own adventure</h2>
+					<h2 id="packages-section-preview-title" class="grid text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl tracking-wide mt-2 mb-4 2xl:mb-12 text-orange-500 font-bold">Choose your own adventure</h2>
 				</article>
 				<ul
-          class="mx-auto grid sm:grid-cols-2 gap-6 md:gap-8 lg:grid-cols-3 2xl:grid-cols-4 py-10 lg:py-14 "
+          class="mx-auto grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 md:gap-8  "
         >
 				{
 					packages.map( (packages) => 
 					
 					<li>
-					<article class="relative flex flex-col packageCard border border-orange-500 max-w-96 h-[35rem] bg-white flex-shrink-0 rounded-lg shadow-md">
+					<article class="relative flex flex-col packageCard border border-orange-500 w-full md:max-w-xs lg:max-w-sm h-[35rem] bg-white rounded-lg shadow-md">
 						<div class="imageWrapper relative max-h-72 flex-1">
 							<img
 							src={packages.data.img}

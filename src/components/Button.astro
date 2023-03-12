@@ -13,7 +13,10 @@ interface Props {
 }
 const { text, href, icon, classes, ...rest } = Astro.props as Props;
 ---
-<button>
+<button
+  name="appelez-moi"
+  type="button"
+>
   <a
     href={href}
     class:list={[
@@ -33,7 +36,7 @@ const { text, href, icon, classes, ...rest } = Astro.props as Props;
 
     {icon && icon.side === "right" && (
 
-      <Icon name={icon.name} class="icon ml-2 w-6 group-hover:text-white text-xs md:text-sm uppercase" />
+      <Icon aria-hidden="true" name={icon.name} class="icon ml-2 w-6 group-hover:text-white text-xs md:text-sm uppercase" />
 
       )
     } 

@@ -14,6 +14,7 @@ interface Props {
 const { text, href, icon, classes, ...rest } = Astro.props as Props;
 ---
 <a
+    aria-roledescription="Applelez-moi "
     href={href}
     class:list={[
       "link",
@@ -42,7 +43,7 @@ const { text, href, icon, classes, ...rest } = Astro.props as Props;
   <style>
 
   .link {
-    @apply hover:font-medium hover:border-orange-500 hover:border-b-2 text-orange-500 transition-all duration-300;
+    @apply hover:font-medium hover:border-orange-500 hover:border-b-2 text-orange-500 transition-all duration-300 cursor-pointer;
   }
 
  .ghost.link {
